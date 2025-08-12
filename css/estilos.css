@@ -55,7 +55,7 @@ var(--bg-cta); font-weight: 600; color: var(--color-cta); box-shadow: 0 0 1px
 rgba(0, 0, 0, .5); } /* Testimony */ .testimony{ background-image:
 linear-gradient(to right, rgb(161, 120, 120), rgb(148, 135, 112), rgb(118, 148,
 118)); } .testimony__container{ display: grid; grid-template-columns: 50px 1fr
-50px; gap: 1em; align-items: center; } .testimony__body{ display: grid;
+50px; gap: 1em; align-items: center; } .testimony__body{ display: none;
 grid-template-columns: 1fr max-content; justify-content: space-between;
 align-items: center; gap: 2em; grid-column: 2/3; grid-row: 1/2; opacity: 0;
 pointer-events: none; } .testimony__body--show{ pointer-events: unset; opacity:
@@ -129,6 +129,5 @@ justify-content: space-between; } .footer__inputs{ flex-wrap: wrap; }
     top: 10px;
     left: 10px;
   }
-  
   
   
