@@ -1,26 +1,20 @@
-(function() {
-
+(function () {
     const sliders = [...document.querySelectorAll('.testimony__body')];
     const buttonNext = document.querySelector('#next');
     const buttonBefore = document.querySelector('#before');
-    let value;
-
-    // Variable para el intervalo automático
+    let value = 1;
     let sliderInterval;
 
     const changePosition = (add) => {
-        const currentTestimony = document.querySelector('.testimony__body--show').dataset.id;
-        value = Number(currentTestimony);
+        // Eliminar la clase de todas las secciones
+        sliders.forEach(slide => slide.classList.remove('testimony__body--show'));
+
+        // Calcular nuevo valor
         value += add;
+        if (value > sliders.length) value = 1;
+        if (value < 1) value = sliders.length;
 
-        sliders[value - add - 1].classList.remove('testimony__body--show');
-
-        if (value > sliders.length) {
-            value = 1;
-        } else if (value === 0) {
-            value = sliders.length;
-        }
-
+        // Mostrar la nueva sección
         sliders[value - 1].classList.add('testimony__body--show');
     };
 
@@ -41,8 +35,7 @@
         resetInterval();
     });
 
-    // Iniciar intervalo automático
+    // Iniciar el primer slide y el temporizador
+    sliders[0].classList.add('testimony__body--show');
     resetInterval();
-
 })();
-
